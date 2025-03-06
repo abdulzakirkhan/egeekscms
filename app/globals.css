@@ -16,6 +16,53 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: #F6F6F6;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.shadowCust{
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.btntext{
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 120%;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+
+.ql-toolbar{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border: none !important;
+}
+
+.ql-toolbar button,
+.ql-toolbar select,.ql-font {
+  border: 2px solid #EAEAEA !important;
+}
+
+
+.ql-container {
+  border: 2px solid #C7C7CC !important;
+  height: 300px !important;
+  border-radius: 6px !important;
+
+}
+
+.shadowCustom{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+
+@media (max-width:900px) {
+  .sm-h-30{
+    height: 30vh;
+  }
 }
