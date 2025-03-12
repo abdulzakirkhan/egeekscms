@@ -85,7 +85,9 @@ export default function JobsPage() {
     setId(id)
   }
 
-     const deleteBlogs = () => {
+
+
+    const deleteBlogs = () => {
       dispatch(deleteJob(id))
       setDeleteAlert(false)
     }
