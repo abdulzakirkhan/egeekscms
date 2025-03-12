@@ -79,7 +79,7 @@ const LogInPage = () => {
                       placeholder="Enter email"
                       className="w-full px-8 py-2 border rounded-md"
                     />
-                    <IoMdMail className="text-grey absolute bottom-3 left-2" />
+                    <IoMdMail className="text-grey absolute top-3 left-2" />
                     <ErrorMessage name="email" component="p" className="text-red-500 text-sm" />
                   </div>
 
@@ -91,14 +91,14 @@ const LogInPage = () => {
                       placeholder="Enter password"
                       className="w-full px-10 py-2 border rounded-md"
                     />
-                    <div className="absolute bottom-2 right-3">
+                    <div className="absolute top-2 right-3">
                       {visiable ? (
                         <IoEyeOff className="text-grey cursor-pointer" size={30} onClick={handleVisAble} />
                       ) : (
                         <FaEye className="text-grey cursor-pointer" size={30} onClick={handleVisAble} />
                       )}
                     </div>
-                    <Image src={"/MyAccount/Key.png"} width={24} height={24} alt="Key" className="absolute bottom-2 left-2" />
+                    <Image src={"/MyAccount/Key.png"} width={24} height={24} alt="Key" className="absolute top-3 left-2" />
                     <ErrorMessage name="password" component="p" className="text-red-500 text-sm" />
                   </div>
 
