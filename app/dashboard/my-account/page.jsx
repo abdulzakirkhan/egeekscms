@@ -40,9 +40,10 @@ const toggleOldPasswordVisibility =() => {
 }
   return (
     <>
-      <Header title="My Account" />
-
-      <section className="p-6">
+      <div className="container mx-auto pl-8">
+        <Header title="My Account" />
+      </div>
+      <section className="py-6 px-20">
         {/* Tabs */}
         <div className="flex justify-center items-center gap-4 pb-3">
           <button
@@ -130,7 +131,7 @@ const toggleOldPasswordVisibility =() => {
 
                   <div className="grid grid-cols-2 gap-4">
                     {/* Email */}
-                    <div className="relative">
+                    <div className="!relative">
                       <label className="block text-gray-700">Email</label>
                       <Field
                         type="email"
@@ -138,7 +139,7 @@ const toggleOldPasswordVisibility =() => {
                         placeholder="Enter email"
                         className="w-full px-8 py-2 border rounded-md"
                       />
-                      <IoMdMail className="text-grey absolute bottom-3 left-2" />
+                      <IoMdMail className="text-grey !absolute top-9 left-2" />
                       <ErrorMessage name="email" component="p" className="text-red-500 text-sm" />
                     </div>
 
@@ -151,10 +152,10 @@ const toggleOldPasswordVisibility =() => {
                         placeholder="Enter password"
                         className="w-full px-10 py-2 border rounded-md"
                       />
-                      <div className="absolute bottom-2 right-3">
+                      <div className="absolute top-7 right-3">
                          {visiable ? <IoEyeOff className="text-grey cursor-pointer" size={30} onClick={handleVisAble}  /> : <FaEye  className="text-grey cursor-pointer" size={30} onClick={handleVisAble} />}
                       </div>
-                      <Image src={"/MyAccount/Key.png"} width={24} height={24} alt="Key" className="absolute bottom-2 left-2" />
+                      <Image src={"/MyAccount/Key.png"} width={24} height={24} alt="Key" className="absolute top-8 left-2" />
                       <ErrorMessage name="password" component="p" className="text-red-500 text-sm" />
                     </div>
                   </div>
