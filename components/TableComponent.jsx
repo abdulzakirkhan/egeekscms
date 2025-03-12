@@ -87,41 +87,30 @@ export default function TableComponent({data,category}) {
 
       {/* Pagination Controls */}
       <div className="flex justify-center mt-4 space-x-2">
-        <button
-          className={`px-4 flex items-center gap-4 py-2 rounded-lg ${
-            currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "hover:bg-gray-200 text-red"
-          }`}
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          <FiArrowLeft />
-          Prev
-        </button>
-
-        {/* Page Numbers */}
-        {Array.from({ length: totalPages }, (_, i) => (
-          <button
-            key={i + 1}
-            className={`px-4 py-2 rounded-lg ${
-              currentPage === i + 1 ? "bg-red text-white" : "hover:bg-gray-200"
-            }`}
-            onClick={() => handlePageChange(i + 1)}
-          >
-            {i + 1}
-          </button>
-        ))}
-
-        <button
-          className={`px-4 flex items-center gap-4 py-2 rounded-lg ${
-            currentPage === totalPages ? "text-gray-400 cursor-not-allowed" : "hover:bg-gray-200 text-red"
-          }`}
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
-          Next
-          <LuArrowRight />
-        </button>
-      </div>
+                  <button
+                    className={`px-4 flex items-center gap-4 py-2 rounded-lg ${currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "hover:bg-gray-200 text-red"}`}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                  >
+                    <FiArrowLeft /> Prev
+                  </button>
+                  {Array.from({ length: totalPages }, (_, i) => (
+                    <button
+                      key={i + 1}
+                      className={`px-4 py-2 rounded-lg ${currentPage === i + 1 ? "bg-red text-white" : "hover:bg-gray-200"}`}
+                      onClick={() => handlePageChange(i + 1)}
+                    >
+                      {i + 1}
+                    </button>
+                  ))}
+                  <button
+                    className={`px-4 flex items-center gap-4 py-2 rounded-lg ${currentPage === totalPages ? "text-gray-400 cursor-not-allowed" : "hover:bg-gray-200 text-red"}`}
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                  >
+                    Next <LuArrowRight />
+                  </button>
+                </div>
     </>
   );
 }

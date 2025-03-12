@@ -15,7 +15,7 @@ const BlogSchema = Yup.object().shape({
   description: Yup.string().required("Description is required"),
 });
 
-const JobForm = ({ initialValues, onSubmit, isEditing }) => {
+const JobForm = ({ initialValues, onSubmit, isEditing ,toggleVisibilityNewBlog }) => {
   return (
     <Formik
       initialValues={initialValues || { title: "", type: "", jobcategory: "", experience: "", totalpositions: "", location: "", description: "" }}
@@ -123,10 +123,11 @@ const JobForm = ({ initialValues, onSubmit, isEditing }) => {
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-end mt-4">
+          <div className="flex justify-end gap-4 absolute top-5 right-8">
+            <button className="btntext bg-blck px-4 py-2 rounded-lg" onClick={toggleVisibilityNewBlog}>Save as Draft</button>
             <button
               type="submit"
-              className="px-4 py-2 bg-red absolute top-5 text-white rounded-md hover:bg-blue-700 transition"
+              className="px-4 py-2 bg-red  text-white rounded-md hover:bg-blue-700 transition"
             >
               {isEditing ? "Save Changes" : "Create Job"}
             </button>

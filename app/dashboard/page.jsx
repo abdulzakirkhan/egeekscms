@@ -14,8 +14,31 @@ import Header from "@/components/Header";
 import TableComponent from "@/components/TableComponent";
 import BlogForm from "@/components/BlogForm";
 import NewHeader from "@/components/NewHeader";
+import Table from "@/components/Table";
 export default function Home() {
   const data = [
+    { id: 1, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"Artificial Intelligence", title: "Lorem ipsum dolor sit amet conshjetur",postType:"Blog", editedBy: "Admin", publishedAt: "10/02/2025 | 8:23 pm" },
+    { id: 2, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"Artificial Intelligence", title: "Lorem ipsum dolor sit amet conshjetur",postType:"Blog", editedBy: "John Doe", publishedAt: "10/02/2025 | 8:23 pm" },
+    { id: 3, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"Artificial Intelligence", title: "Junior UI/UX Designer",postType:"Job", editedBy: "Jane Doe", publishedAt: "10/02/2025 | 8:23 pm" },
+    { id: 4, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"Artificial Intelligence", title: "Senior Laravel Developer",postType:"Job", editedBy: "Jane Doe", publishedAt: "10/02/2025 | 8:23 pm" },
+    { id: 5, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"Web Development", title: "Hi-Tea at Monal with IT Team",postType:"Event", editedBy: "Jane Doe", publishedAt: "10/02/2025 | 8:23 pm" },
+    { id: 6, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"Web Development", title: "CEO Dinner with Sales Team: Strngthin...",postType:"Event", editedBy: "Jane Doe", publishedAt: "10/02/2025 | 8:23 pm" },
+    { id: 7, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"App Development", title: "CEO Dinner with Sales Team: Strngthin...",postType:"Event", editedBy: "Jane Doe", publishedAt: "10/02/2025 | 8:23 pm" },
+    { id: 8, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"App Development", title: "CEO Dinner with Sales Team: Strngthin...",postType:"Event", editedBy: "Jane Doe", publishedAt: "10/02/2025 | 8:23 pm" },
+    { id: 9, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"App Development", title: "CEO Dinner with Sales Team: Strngthin...",postType:"Event", editedBy: "Jane Doe", publishedAt: "10/02/2025 | 8:23 pm" },
+    { id: 10, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"App Development", title: "CEO Dinner with Sales Team: Strngthin...",postType:"Event", editedBy: "Jane Doe", publishedAt: "10/02/2025 | 8:23 pm" },
+  ];
+
+
+  const columns = [
+    { header: "ID"},
+    { header: "Title"},
+    { header: "	Post type"},
+    { header: "Edited By"},
+    { header: "Published At"},
+    { header: "Action"},
+  ];
+  const newData = [
     { id: 1, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"Artificial Intelligence", title: "Lorem ipsum dolor sit amet conshjetur",postType:"Blog", editedBy: "Admin", publishedAt: "10/02/2025 | 8:23 pm" },
     { id: 2, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"Artificial Intelligence", title: "Lorem ipsum dolor sit amet conshjetur",postType:"Blog", editedBy: "John Doe", publishedAt: "10/02/2025 | 8:23 pm" },
     { id: 3, description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium voluptate omnis.",category:"Artificial Intelligence", title: "Junior UI/UX Designer",postType:"Job", editedBy: "Jane Doe", publishedAt: "10/02/2025 | 8:23 pm" },
@@ -33,11 +56,11 @@ export default function Home() {
     const [isEditing, setIsEditing] = useState(false);
       const [currentPage, setCurrentPage] = useState(1);
    
-    const totalPages = Math.ceil(data.length / itemsPerPage);
+    const totalPages = Math.ceil(newData.length / itemsPerPage);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const paginatedData = data.slice(indexOfFirstItem, indexOfLastItem);
+    const paginatedData = newData.slice(indexOfFirstItem, indexOfLastItem);
     const [showDropDown, setShowDropDown] = useState(true)
     // Handle page changes
     const handlePageChange = (pageNumber) => {
@@ -92,6 +115,9 @@ export default function Home() {
     setShowModalSuccess(true);
     setvisiAbleNewBlog(false);
   };
+
+
+  const h = () => console.log("Hi this is me")
   return (
     <>
     {isEditing ? (
@@ -323,8 +349,3 @@ export default function Home() {
     </>
   )
 }
-
-
-
-
-

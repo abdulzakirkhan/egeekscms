@@ -20,6 +20,7 @@ import { MdOutlineDeleteOutline } from "react-icons/md";
 import { toast, ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import Table from "@/components/Table";
 
 
 
@@ -125,23 +126,33 @@ export default function BlogsPage() {
   useEffect(() => {
     console.log("Success modal visibility:", showModalSuccess);
   }, [showModalSuccess]);
-  
+
+  const columns = [
+    { header: "ID"},
+    { header: "Title"},
+    { header: "Post Type"},
+    { header: "Edited By"},
+    { header: "Published At"},
+    { header: "Action"},
+  ];
   return (
     <>
     {showToast && <ToastContainer position="top-right" autoClose={2000} />}
       {visiAbleNewBlog ? (
         <>
-          <NewHeader title={currentBlog ? "Update Blog" :"New Blog"} onclick={setShowModalSuccess} />
+        <div className="lg:container lg:pl-8">
+          <NewHeader title={currentBlog ? "Update Newsletter" :"New Newsletter"} onclick={setShowModalSuccess} />
           <BlogForm
             initialValues={currentBlog || { title: "", category: "", description: "" }} // Pass currentBlog or default values
             onSubmit={handleSubmit}
             isEditing={isEditing}
           />
+        </div>
         </>
       ) : (
         <>
 
-          <Header title={"Manage Blogs"} />
+          <Header title={"Manage Newsletter"} />
           <section className="bg-[#F6F6F6] py-8">
             <div className="container mx-auto px-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-6">
@@ -258,6 +269,8 @@ export default function BlogsPage() {
                       ))}
                     </tbody>
                   </table>
+
+                  
                 </div>
                 <div className="flex justify-center mt-4 space-x-2">
                   <button
@@ -284,6 +297,7 @@ export default function BlogsPage() {
                     Next <LuArrowRight />
                   </button>
                 </div>
+
               </div>
             </div>
           </section>

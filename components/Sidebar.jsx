@@ -15,11 +15,11 @@ const Sidebar = ({ handleModal }) => {
   const menuItems = [
     { name: "Dashboard", href: "/dashboard", icon: <MdDashboard size={28} /> },
     {
-      name: "Blogs",
-      href: "/dashboard/blogs",
+      name: "Newsletter",
+      href: "/dashboard/newsletter",
       icon: (
         <Image
-          src={pathname === "/dashboard/blogs" ? "/active-blog.png" : "/blog.png"}
+          src={pathname === "/dashboard/newsletter" ? "/active-blog.png" : "/blog.png"}
           width={28}
           height={28}
           alt="Blog Icon"

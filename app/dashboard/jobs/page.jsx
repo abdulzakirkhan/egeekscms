@@ -94,12 +94,16 @@ export default function JobsPage() {
   return (
     <>
     {visiAbleNewBlog ? <>
-      <NewHeader title={currentBlog ? "Update Job" : "New Job"} onclick={setShowModalSuccess} />
-          <JobForm
-            initialValues={currentBlog || { title: "", category: "", description: "" }} // Pass currentBlog or default values
-            onSubmit={handleSubmit}
-            isEditing={isEditing}
-          />
+      <div className="lg:container lg:pl-8">
+        <NewHeader title={currentBlog ? "Update Job" : "New Job"} onclick={setShowModalSuccess} />
+            <JobForm
+              initialValues={currentBlog || { title: "", category: "", description: "" }} // Pass currentBlog or default values
+              onSubmit={handleSubmit}
+              isEditing={isEditing}
+              toggleVisibilityNewBlog={toggleVisibilityNewBlog}
+            />
+
+            </div>
     </> :
     <>
         <Header title={"Manage Jobs"} />

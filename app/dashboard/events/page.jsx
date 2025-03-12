@@ -61,12 +61,15 @@ export default function JobsPage() {
   return (
     <>
     {visiAbleNewBlog ? <>
-      <NewHeader title={currentBlog ? "Update Event" : "New Event"} onclick={setShowModalSuccess} />
+      <div className="lg:container lg:pl-8">
+          <NewHeader title={currentBlog ? "Update Event" : "New Event"} onclick={setShowModalSuccess} />
           <JobForm
             initialValues={currentBlog || { title: "", category: "", description: "" }} // Pass currentBlog or default values
             onSubmit={handleSubmit}
             isEditing={isEditing}
+            toggleVisibilityNewBlog={toggleVisibilityNewBlog}
           />
+      </div>
     </> :
     <>
         <Header title={"Manage Events"} />
@@ -178,8 +181,6 @@ export default function JobsPage() {
             </div>
             </div>
             <div className="py-6">
-              {/* <Tables data={data} /> */}
-               {/* Table */}
                         <div className="overflow-x-auto border-2 bg-white shadow-lg rounded-lg my-8">
                           <table className="w-full border-slate-500">
                             {/* Table Head */}
