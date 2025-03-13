@@ -26,6 +26,7 @@ const LogInPage = () => {
   const handleSubmit =async (values, { setSubmitting }) =>{
     try {
       console.log("Form Data:", values);
+      
       localStorage.setItem("isLoggedIn", JSON.stringify(true));
       toast.success("Login successfully!");
       
@@ -80,7 +81,7 @@ const LogInPage = () => {
                       className="w-full px-8 py-2 border rounded-md"
                     />
                     <IoMdMail className="text-grey absolute top-3 left-2" />
-                    <ErrorMessage name="email" component="p" className="text-red-500 text-sm" />
+                    <ErrorMessage name="email" component="p" className="text-red text-sm" />
                   </div>
 
                   {/* Password Field */}
@@ -99,7 +100,7 @@ const LogInPage = () => {
                       )}
                     </div>
                     <Image src={"/MyAccount/Key.png"} width={24} height={24} alt="Key" className="absolute top-3 left-2" />
-                    <ErrorMessage name="password" component="p" className="text-red-500 text-sm" />
+                    <ErrorMessage name="password" component="p" className="text-red text-sm" />
                   </div>
 
                   {/* Remember Me & Forgot Password */}
@@ -120,7 +121,7 @@ const LogInPage = () => {
                       disabled={isSubmitting}
                       className="px-6 py-2 mt-4 bg-red text-white rounded-lg btntext"
                     >
-                      {isSubmitting ? "Saving..." : "Login"}
+                      {isSubmitting ? "Loging..." : "Login"}
                     </button>
                   </div>
                 </Form>

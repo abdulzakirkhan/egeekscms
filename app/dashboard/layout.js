@@ -32,12 +32,9 @@ export default function RootLayout({ children }) {
     try {
       // implement logout logic here
       localStorage.setItem("isLoggedIn", JSON.stringify(false));
-      toast.success("Logged out successfully!");
+      // toast.success("Logged out successfully!");
       setShowModal(false);
-
-      setTimeout(() => {
-        router.push("/");
-      }, 2000); // Redirect after showing toast
+      router.push("/");
     } catch (error) {
       toast.error("Logout failed. Try again!")
     }
